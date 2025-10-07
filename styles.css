@@ -11,15 +11,31 @@ body{
     font-family: 'Figtree';
 }
 .container{
+    position: relative;
     background-color: hsl(0, 0%, 100%);
-    border: 20px solid hsl(0, 0%, 100%);
     border-radius: 20px;
     margin-left: 500px;
     margin-right: 200px;
     margin-top: 70px;
     width: 30%;
-    border: 2px solid;
     padding: 30px;
+    box-shadow: 9px 9px;
+}
+.container::before{
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:  hsl(47, 88%, 63%);
+    position: absolute;
+    animation: showRight 1s ease forwards;
+    animation-delay: .9s;
+}
+@keyframes showRight{
+    100% {
+        width: 0;
+    }
 }
 .article{
     width:  350px;
@@ -57,3 +73,19 @@ p{
     display: flex;
     /* align-items: stretch; */
 }
+.name{
+    margin-left: 10px;
+}
+
+
+@media (max-width: 900px) {
+    .container{
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 90%;
+    }
+    .article{
+        width:  100%;
+        height: auto;
+    }
+}   
